@@ -1,0 +1,740 @@
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  background-color: #efefef;
+  color: black;
+  overflow-x: hidden;
+}
+
+.calendar-wrapper {
+  height: auto;
+  max-width: 85%;
+  margin: 0 auto;
+}
+
+.calendar-header {
+  padding: 30px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  position: relative;
+}
+.card {
+  border-radius: 10px;
+}
+
+#todayDayName {
+  display: none;
+}
+
+.calendar-content {
+  background-color: #fff;
+  padding: 15px;
+  overflow: hidden;
+  direction: rtl;
+}
+
+.event-mark {
+  width: 5px;
+  height: 5px;
+  background-color: teal;
+  border-radius: 100px;
+  position: absolute;
+  left: 46%;
+  top: 70%;
+}
+.btnlight {
+  color: rgb(46, 41, 41);
+
+  width: 100%;
+}
+#mySidenav .btnlight {
+  min-height: 5vh;
+  height: 85px;
+}
+#mySidenav .btnlight:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+.col {
+  width: 10%;
+  font-size: 0.9rem;
+  text-align: center;
+}
+.blue.lighten-3 {
+  border: 1px solid #483094 !important;
+  border-radius: 15px;
+}
+
+.eventCard-header {
+  font-weight: bold;
+}
+
+.eventCard-description {
+  color: grey;
+}
+
+.day-mark {
+  border-radius: 30px;
+  pointer-events: none;
+  color: #858b93;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: initial;
+}
+
+#table-body .col:hover {
+  cursor: pointer;
+  border: 1px solid grey;
+  background-color: #efefef;
+  border-radius: 15px;
+}
+
+.empty-day:hover {
+  cursor: default !important;
+  background-color: #fff !important;
+}
+
+#table-body .row .col {
+  padding: 0.65rem;
+  max-width: 7vw;
+  max-height: 8vh;
+  text-align: center;
+  font-weight: bold;
+  padding-top: 0;
+}
+
+#table-body .col {
+  border: 1px solid transparent;
+}
+
+#table-body .row {
+  margin-bottom: 0;
+  min-height: 8vh;
+}
+
+#calendar-table {
+  text-align: center;
+}
+
+.prev-button {
+  position: absolute;
+  cursor: pointer;
+  left: 0%;
+  top: 35%;
+  color: grey !important;
+}
+
+.prev-button i {
+  font-size: 2em;
+}
+
+.next-button {
+  position: absolute;
+  cursor: pointer;
+  right: 0%;
+  top: 35%;
+  color: grey !important;
+}
+
+.next-button i {
+  font-size: 2em;
+}
+
+@media (max-width: 992px) {
+  .mobile-header {
+    display: block;
+  }
+
+  .sidebar-wrapper {
+    background-color: #eeeeee !important;
+  }
+  .sidebar-title {
+    background-color: #5a649c !important;
+  }
+
+  .card {
+    margin-bottom: 3vh;
+  }
+  .sidenav {
+    height: auto !important;
+    width: auto !important;
+    position: inherit !important;
+  }
+  #mySidenav .btnlight {
+    margin: 0px;
+  }
+}
+
+@media (max-width: 767px) {
+  .content-wrapper .container {
+    width: auto;
+  }
+  .calendar-content {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  body .row {
+    margin-bottom: 0;
+  }
+  .sidenav {
+    height: auto !important;
+    width: auto !important;
+    position: inherit !important;
+  }
+}
+
+@media (max-width: 450px) {
+  .content-wrapper {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .content-wrapper .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .sidenav {
+    height: auto;
+    width: auto;
+    position: inherit;
+  }
+}
+
+.container {
+  height: 93vh;
+}
+.show-sidebar {
+  width: 20vw;
+}
+
+.closebtn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 36px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f5f5f5;
+
+  border-radius: 33px;
+}
+
+::-webkit-scrollbar {
+  height: 8px;
+  width: 1px;
+  background-color: #f5f5f5;
+  border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: darkgray;
+  border-radius: 30px;
+}
+
+button {
+  border-radius: 30px !important;
+}
+#mySidenav button {
+  border-radius: 0px !important;
+}
+
+.dataTables_filter input {
+  background-color: transparent;
+  border: 1px solid #e0e0e0;
+  border-radius: 30px !important;
+  direction: rtl !important;
+  padding: 5px;
+  max-height: 3vh;
+}
+#removeRow,
+#addRow {
+  border-radius: 0px !important;
+}
+.my-input {
+  background-color: transparent;
+  border: 1px solid #e0e0e0;
+  border-radius: 30px !important;
+  direction: rtl !important;
+  padding: 5px;
+  max-height: 3vh;
+}
+input:focus {
+  outline: none;
+  color: #0e0d0d;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0px;
+}
+.card-body {
+  height: 95vh;
+  overflow-y: auto;
+  overflow-x: auto;
+  padding: 0 1.25rem 0 1.25rem;
+}
+
+.dataTables_filter {
+  float: right !important;
+}
+.top {
+  position: sticky;
+  background-color: white;
+  top: 0;
+  padding-top: 10px;
+  padding-bottom: 1px;
+  height: 47px;
+}
+.bottom {
+  justify-content: space-between;
+  text-align: left;
+  position: sticky;
+  background-color: white;
+  bottom: 0px;
+  display: flex;
+}
+table.dataTable tbody tr.selected {
+  background-color: #b0bed9;
+}
+table.dataTable tbody td {
+  border-top: 3px solid white;
+  border-bottom: 3px solid white;
+}
+table.dataTable thead .sorting {
+  background-image: none;
+}
+table.dataTable thead .sorting_asc {
+  background-image: none !important;
+}
+table.dataTable thead .sorting_desc {
+  background-image: none !important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  background-color: white !important ;
+  border: 1px solid white;
+  background: white;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  padding: 0;
+}
+div.dataTables_wrapper div.dataTables_length select {
+  width: 50%;
+}
+th,
+td {
+  text-align: center;
+}
+
+#allControllerUl tbody tr:hover {
+  background-color: #efefef;
+}
+#allMonthTable tbody tr:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  overflow-x: auto;
+}
+#allDayTable tbody tr:hover {
+  background-color: #efefef;
+}
+tbody tr .editor-view:hover {
+  cursor: pointer;
+}
+
+#dochBI tbody tr:hover {
+  background-color: #efefef;
+}
+
+.pagination {
+  float: left;
+}
+.eventCard-description {
+  display: flex;
+  justify-content: space-around;
+}
+
+#table-header .row .col {
+  font-size: 1rem;
+}
+
+.header-col {
+  font-size: 15px;
+  font-weight: bold;
+}
+.display-none {
+  display: none;
+}
+#table-body {
+  margin-top: 15px;
+}
+.sticky-header {
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding-top: 1.25rem;
+}
+
+#header_li {
+  z-index: 1;
+  position: sticky;
+  top: 88px;
+}
+#out-click {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: none;
+}
+.show {
+  display: block;
+  min-width: 5rem;
+
+  cursor: pointer;
+}
+.li-menu {
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 80%;
+  text-align: right;
+}
+.li-menu:hover {
+  background-color: #efefef;
+}
+
+#mySidenav .btnlight:hover {
+  color: #483094;
+}
+.focus {
+  background-color: white;
+  color: #483094;
+
+  border-right: solid #483094 7px;
+}
+.loader {
+  border: 6px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 6px solid #3498db;
+  width: 80px;
+  height: 80px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+.modal {
+  direction: rtl;
+}
+
+.red {
+  background-color: #ffd6bb;
+  border: 1px solid #ff6600;
+}
+.bar-2,
+.bar-1,
+.bar-3,
+.bar-4 {
+  top: 47px;
+  width: 100%;
+  direction: rtl;
+  background-color: white;
+  display: flex;
+  position: sticky;
+  height: 30px;
+}
+.addBar {
+  margin-left: 10px;
+}
+thead {
+  position: sticky;
+  top: 77px;
+  background-color: white;
+}
+.table-bordered {
+  border: 0px solid #dee2e6;
+}
+table.dataTable {
+  margin-top: 0px !important;
+}
+.sidenav {
+  height: 100%;
+  width: 8vw;
+  position: fixed;
+  z-index: 5;
+  top: 2vh;
+  right: 0;
+  background-color: #efefef;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 5px;
+  margin-right: 5px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.cont {
+  width: 92vw;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+.top-1 {
+  direction: ltr;
+}
+#myProgress {
+  width: 50%;
+  direction: rtl;
+  background-color: #ddd;
+  border-radius: 30px;
+}
+
+#myBar {
+  width: 0%;
+  height: 15px;
+  background-color: #6244c1;
+  text-align: center;
+  line-height: 15px;
+  color: white;
+  font-size: 13px;
+  border-radius: 0px 30px 30px 0px;
+}
+
+p {
+  font-size: 80%;
+  margin: 0px 15px;
+}
+#allTable_wrapper .dataTables_filter {
+  float: left !important;
+}
+
+.dataTables_filter {
+  float: left !important;
+}
+#lineInfo .dataTables_filter {
+  float: right !important;
+}
+
+#loaderModalCenter .modal-dialog {
+  max-width: 130px;
+}
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #483094 transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+input[type="checkbox"] {
+  margin: 5px;
+}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.bar {
+  fill: black;
+}
+
+.x.axis path {
+  display: none;
+}
+button {
+  border: none;
+  background: white;
+}
+
+button:focus {
+  outline: none;
+}
+.btn:focus {
+  outline: none;
+  box-shadow: none !important;
+}
+.btn.focus {
+  outline: 0;
+  box-shadow: none;
+}
+.page-link {
+  color: #483094;
+}
+.page-item.active .page-link {
+  background-color: #483094;
+  border-color: #483094;
+}
+.my-btn {
+  color: white;
+  background-color: #483094;
+  color: white;
+  border-radius: 30px !important;
+  height: 37px;
+}
+h4 {
+  font-weight: bold;
+}
+.seting-tab {
+  padding: 15px;
+  margin: 5px;
+  background-color: #efefef;
+  /* background-color: aliceblue;
+  box-shadow: 2px 3px 10px 3px gainsboro; */
+}
+#newRow {
+  text-align: right;
+  max-height: 65vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
